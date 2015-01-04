@@ -105,3 +105,5 @@ docs/_build/
 target/
 
 
+
+virtualwarroom/local_settings.py
