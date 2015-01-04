@@ -1,0 +1,20 @@
+{% block content %}
+    <div>
+        <h2>{{ object.title }}</h2>
+        <ul>
+            {% for event in object.events.all %}
+                <li>{ event.time }}, {{ event.action }}</li>
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for group in object.constraints.all %}
+                <li>{{ group.name }}</li>
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for follow_up in object.follow_ups.all %}
+                <li>{{ follow_up.name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}

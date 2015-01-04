@@ -7,4 +7,6 @@ urlpatterns = patterns('',
                        # url(r'^blog/', include('blog.urls')),
 
                        url(r'^$', views.HomePageView.as_view(), name='homepage'),
+                       url(r'^task/(?P<pk>\d+)/$', views.TaskView.as_view(), name='task-detail'),
+
 )

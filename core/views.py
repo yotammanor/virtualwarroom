@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
+from django.views.generic import ListView, DetailView
+from core.models import Task, TaskEvent, Category
 
 # Create your views here.
 
@@ -15,3 +17,8 @@ class LoggedInMixin(object):
 
 class HomePageView(TemplateView):
     template_name = 'core/base.html'
+
+
+class TaskView(DetailView):
+    model = Task
+    template_name = 'core/task.html'
