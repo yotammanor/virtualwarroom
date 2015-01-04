@@ -83,6 +83,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir))
+sub_path = lambda *x: os.path.join(BASE_DIR, *x)
+STATICFILES_DIRS = (
+    sub_path('static'),
+)
+# STATIC_ROOT = sub_path("collected_static")
+STATIC_ROOT = sub_path("collected_static")
+
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,  'templates'),
 )
+
+from local_settings import *
